@@ -43,6 +43,8 @@ classifiers = [
 ]
 
 dependencies = [
+    "antlr-denter == 1.*",
+    "antlr4-python3-runtime == 4.*",
     "dbrownell_Common",
     "typer ~= 0.9"
 ]
