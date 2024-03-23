@@ -119,52 +119,52 @@ jobs:
       python_version: ${{ matrix.python_version }}
       validation_command: python -c "from TheLanguage1 import __version__; print(__version__)"
 
-  # ----------------------------------------------------------------------
-  create_binary:
-    needs: validate
-
-    strategy:
-      fail-fast: false
-
-      matrix:
-        os:
-          - macos-latest
-          - ubuntu-latest
-          - windows-latest
-
-        python_version:
-          - "3.11"
-
-    name: Create Binary
-
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_python_binary.yaml@CI-v0.15.2
-    with:
-      operating_system: ${{ matrix.os }}
-      python_version: ${{ matrix.python_version }}
-
-  # ----------------------------------------------------------------------
-  validate_binary:
-    needs: create_binary
-
-    strategy:
-      fail-fast: false
-
-      matrix:
-        os:
-          - macos-latest
-          - ubuntu-latest
-          - windows-latest
-
-        python_version:
-          - "3.11"
-
-    name: Validate Binary
-
-    uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_validate_python_binary.yaml@CI-v0.15.2
-    with:
-      operating_system: ${{ matrix.os }}
-      python_version: ${{ matrix.python_version }}
-      validation_command: TheLanguage1 Version
+  # TODO: # ----------------------------------------------------------------------
+  # TODO: create_binary:
+  # TODO:   needs: validate
+  # TODO:
+  # TODO:   strategy:
+  # TODO:     fail-fast: false
+  # TODO:
+  # TODO:     matrix:
+  # TODO:       os:
+  # TODO:         - macos-latest
+  # TODO:         - ubuntu-latest
+  # TODO:         - windows-latest
+  # TODO:
+  # TODO:       python_version:
+  # TODO:         - "3.11"
+  # TODO:
+  # TODO:   name: Create Binary
+  # TODO:
+  # TODO:   uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_create_python_binary.yaml@CI-v0.15.2
+  # TODO:   with:
+  # TODO:     operating_system: ${{ matrix.os }}
+  # TODO:     python_version: ${{ matrix.python_version }}
+  # TODO:
+  # TODO: # ----------------------------------------------------------------------
+  # TODO: validate_binary:
+  # TODO:   needs: create_binary
+  # TODO:
+  # TODO:   strategy:
+  # TODO:     fail-fast: false
+  # TODO:
+  # TODO:     matrix:
+  # TODO:       os:
+  # TODO:         - macos-latest
+  # TODO:         - ubuntu-latest
+  # TODO:         - windows-latest
+  # TODO:
+  # TODO:       python_version:
+  # TODO:         - "3.11"
+  # TODO:
+  # TODO:   name: Validate Binary
+  # TODO:
+  # TODO:   uses: davidbrownell/dbrownell_DevTools/.github/workflows/callable_validate_python_binary.yaml@CI-v0.15.2
+  # TODO:   with:
+  # TODO:     operating_system: ${{ matrix.os }}
+  # TODO:     python_version: ${{ matrix.python_version }}
+  # TODO:     validation_command: TheLanguage1 Version
 
 
 
@@ -172,7 +172,7 @@ jobs:
   publish:
     needs:
       - validate_package
-      - validate_binary
+      # TODO: - validate_binary
 
 
     name: Publish

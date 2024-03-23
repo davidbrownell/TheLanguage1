@@ -43,7 +43,7 @@ classifiers = [
 ]
 
 dependencies = [
-    # TODO
+    "dbrownell_Common",
     "typer ~= 0.9"
 ]
 
@@ -69,8 +69,8 @@ Homepage = "https://github.com/davidbrownell/TheLanguage1"
 Documentation = "https://github.com/davidbrownell/TheLanguage1"
 Repository = "https://github.com/davidbrownell/TheLanguage1"
 
-[project.scripts]
-TheLanguage1 = "TheLanguage1:EntryPoint.app"
+# TODO: [project.scripts]
+# TODO: TheLanguage1 = "TheLanguage1:EntryPoint.app"
 
 
 # ----------------------------------------------------------------------
